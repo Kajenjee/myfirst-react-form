@@ -39,7 +39,7 @@ class App extends Component
 
   render()
   {
-    const pollo = <h1>Tabellozza proviamoo</h1>
+    const pollo = <h1>Tabellozza testtest</h1>
     const characters = this.state.characters
     return(
       <div className="container">
