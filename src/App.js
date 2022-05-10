@@ -1,0 +1,56 @@
+import React, {Component} from 'react'
+import Table from './Table'
+
+class App extends Component
+{
+  state =
+  {
+    characters :
+    [
+      {
+        name: 'Charlie',
+        job: 'Janitor',
+      },
+      {
+        name: 'Mac',
+        job: 'Bouncer',
+      },
+      {
+        name: 'Dee',
+        job: 'Aspring actress',
+      },
+      {
+        name: 'Dennis',
+        job: 'Bartender',
+      }
+    ]
+  }
+
+  removeCharacter = (index) => {
+    const {characters} = this.state
+
+    this.setState({
+      characters: characters.filter((character, i) => {
+        return i !== index
+      }),
+    })
+  }
+
+
+  render()
+  {
+    const pollo = <h1>Tabellozza proviamoo</h1>
+    const characters = this.state.characters
+    return(
+      <div className="container">
+        {pollo}
+        <Table
+          characterData={characters}
+          removeCharacter={this.removeCharacter}
+        /> /*character viene passato al file Table*/
+      </div>
+    )
+  }
+}
+
+export default App
